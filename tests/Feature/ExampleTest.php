@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Stock;
 use App\Product;
 use App\Retailer;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -21,6 +22,13 @@ class ExampleTest extends TestCase
 
         $this->assertFalse($switch->inStock());
 
+        $stock  = new Stock([
+            'price' => 10000,
+            'url' => 'http://foo.com',
+            'sku' => '12345',
+            'in_stock' => true
+        ]);
 
+        $bestBuy->addStock($switch, $stock);
     }
 }

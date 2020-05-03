@@ -4,5 +4,8 @@ namespace App;
 
 class Retailer extends Model
 {
-    protected $guarded = [];
+    public function addStock(Product $product, Stock $stock)
+    {
+
+    }
 }
